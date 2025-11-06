@@ -1,0 +1,17 @@
+syntax = "proto3";
+package bucks.bucks;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "bucks/bucks/params.proto";
+
+option go_package = "bucks/x/bucks/types";
+
+// GenesisState defines the bucks module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
